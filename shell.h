@@ -1,11 +1,6 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-/* for read/write buffers */
-#define READ_BUF_SIZE 1024
-#define WRITE_BUF_SIZE 1024
-#define BUF_FLUSH -1
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -19,15 +14,20 @@
 #include <fcntl.h>
 #include <errno.h>
 
+/* for read/write buffers */
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
+
 /* chain command */
-#define CMD_NORM0
-#define CMD_OR1
-#define CMD_AND2
-#define CMD_CHAIN3
+#define CMD_NORM	0
+#define CMD_OR		1
+#define CMD_AND		2
+#define CMD_CHAIN	3
  
 /* convert_number() */
-#define CONVERT_UNSIGNED2
-#define CONVERT_LOWERCASE1
+#define CONVERT_UNSIGNED	2
+#define CONVERT_LOWERCASE	1
 
 /* using system getline() */
 #define USE_GETLINE 0
@@ -51,8 +51,8 @@ typedef struct liststr
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
-#define HIST_FILE ".simple_shell_history"
-#define HIST_MAX4096
+#define HIST_FILE	".simple_shell_history"
+#define HIST_MAX	4096
 
 extern char **environ;
 
