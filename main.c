@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * main -  point of entry
- * @ac: argument count
- * @av: argument vector
+ * main - shell entry point
+ * @ac: arg counter
+ * @av: arg vector
  *
- * Return: 0 on success or 1 on error
+ * Return: if success 0, 1 if error
  */
 
 int main(int ac, char **av)
@@ -24,7 +24,9 @@ int main(int ac, char **av)
 		if (fd == -1)
 		{
 			if (errno == EACCES)
+			{
 				exit(126);
+			}
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
@@ -43,4 +45,3 @@ int main(int ac, char **av)
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
-
