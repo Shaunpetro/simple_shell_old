@@ -69,7 +69,7 @@ int find_builtin(info_t *info)
 		{NULL, NULL}
 	};
 
-	for (z = 0; builtintbl[i].type; z++)
+	for (z = 0; builtintbl[z].type; z++)
 		if (_strcmp(info->argv[0], builtintbl[z].type) == 0)
 		{
 			info->line_count++;

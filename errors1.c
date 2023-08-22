@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an int
- * @s: the string to convert
+ * _erratoi - converts a string to an integer
+ * @s: the string to be converted
  *
- * Return: 0 if no numbers in string converted number
+ * Return: 0 if no numbers converted in string,
  *    otherwise -1 on error
  */
 
@@ -14,9 +14,7 @@ int _erratoi(char *s)
 	unsigned long int result = 0;
 
 	if (*s == '+')
-	{
 		s++;
-	}
 	for (z = 0;  s[z] != '\0'; z++)
 	{
 		if (s[z] >= '0' && s[z] <= '9')
@@ -27,18 +25,19 @@ int _erratoi(char *s)
 				return (-1);
 		}
 		else
+		{
 			return (-1);
+		}
 	}
 	return (result);
 }
 
 /**
- * print_error - func that prints an error message
- * @info: the parameter & return info struct
- * @estr: specific error type string
+ * print_error - error message to print
+ * @info: struct parameter for possible arg's
+ * @estr: string containing specified error type
  *
- * Return: 0 if there are no numbers in str are
- *    converted number
+ * Return: 0 if no numbers in string are converted
  *    otherwise -1 on error
  */
 
@@ -54,12 +53,11 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function that prints a
- *    decimal (integer) a base 10 num
+ * print_d - func that prints a base10 decimal num
  * @input: the input
  * @fd: the filedescriptor to write to
  *
- * Return: number of characters printed
+ * Return: number of char's printed
  */
 
 int print_d(int input, int fd)
@@ -95,10 +93,10 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - func to convert num
- * @num: number
- * @base: the base
- * @flags: te argument flags
+ * convert_number - number converter function
+ * @num: num
+ * @base: base
+ * @flags: arg's flags
  *
  * Return: string
  */
@@ -121,7 +119,7 @@ char *convert_number(long int num, int base, int flags)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do {
+	do{
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
@@ -134,9 +132,8 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - func that replaces first
- *     instance of comments / '#' with '\0'
- * @buf: address of the string
+ * remove_comments - function replacing 1st instance of '#' with '\0'
+ * @buf: address of the str to change
  *
  * Return: Always 0;
  */
