@@ -86,7 +86,7 @@ int _mycd(info_t *info)
  * _myhelp – helper to change the current directory of process
  * @info: Struct parameter containing posible arguments.
  *   used to maintaining constant f prototype
- *   
+ *
  * Return: Always 0
  */
 

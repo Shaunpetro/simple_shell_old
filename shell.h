@@ -24,7 +24,7 @@
 #define CMD_OR		1
 #define CMD_AND		2
 #define CMD_CHAIN	3
- 
+
 /* convert_number() */
 #define CONVERT_UNSIGNED	2
 #define CONVERT_LOWERCASE	1
